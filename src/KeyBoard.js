@@ -4,11 +4,15 @@ import Key from './Key'
 const keys = ['q','w','e'];
 
 function KeyBoard(props){
+    const keyClicked = (char) => {
+        props.addDisplay(char);
+    }
+
     return (
         <div>
-            <Key char={keys[0]} />
-            <Key char={keys[1]}/>
-            <Key char={keys[2]}/>
+            <Key keyClicked={keyClicked} char={keys[0]} />
+            <Key keyClicked={keyClicked} char={keys[1]}/>
+            <Key keyClicked={keyClicked} char={keys[2]}/>
         </div>
     )
 }

@@ -2,9 +2,8 @@ import React, {useState} from "react";
 
 function Key(props){
     
-    // console.log("props");
     return (
-        <button>{props.char}</button>
+        <button onClick={() => props.keyClicked(props.char)}>{props.char}</button>
     )
 }
 
