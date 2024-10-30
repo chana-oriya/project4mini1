@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import KeyBoard from './KeyBoard';
+import KeyBoard from './Components/KeyBoard';
 
 function App() {
   const [display, setDisplay] = useState("");
