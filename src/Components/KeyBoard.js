@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Key from './Key'
 
-const keys = ['q','w','e'];
+const keys = ['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m', ' '];
 
 function KeyBoard(props){
     const keyClicked = (char) => {
@@ -10,9 +10,7 @@ function KeyBoard(props){
 
     return (
         <div>
-            <Key keyClicked={keyClicked} char={keys[0]} />
-            <Key keyClicked={keyClicked} char={keys[1]}/>
-            <Key keyClicked={keyClicked} char={keys[2]}/>
+            {keys.map((key) => (<Key keyClicked={keyClicked} char={key}/>))}
         </div>
     )
 }
