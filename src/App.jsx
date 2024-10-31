@@ -67,9 +67,9 @@ function App() {
     <>
     <div id="all"> 
       <h1 id="title">amazing keyboard!</h1>
-      <p style={{height: "50px"}}>{
+      <pre style={{height: "50px"}}>{
         display.map((span) => (<span style={span.style}>{span.char}</span>))
-      }</p>
+      }</pre>
       <KeyBoard addDisplay={addChar} clear={clearAll} delete={deleteChar}/>
       <ChangeColor changeColor={changeColor}/>
       <ChangeSize  changeSize={changeSize}/>
