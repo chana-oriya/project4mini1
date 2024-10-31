@@ -13,7 +13,6 @@ function App() {
 
 
   const addChar = (char) => {
-    
     setDisplay((prevDisplay) => {
         prevDisplay.push({style: currStyle, char: char});
         return [...prevDisplay];
@@ -36,7 +35,7 @@ function App() {
   const changeSize = (size) => {
     newStyle("fontSize", size);
   }
-
+  
   const clearAll = () => {console.log("in clear"); setDisplay([{color: "black" ,fontSize: "16px"}]);}
 
 
