@@ -20,12 +20,6 @@ function KeyBoard(props){
         setLanguage(lang);
     }
 
-    const delate =()=> {
-        console.log(props.display);
-        const ex="akuo"
-        // props.addDisplay(str.slice(0,-1))
-    }
-
     return (
         <div>
         <div>
@@ -34,7 +28,7 @@ function KeyBoard(props){
 
         <div>
         <button onClick={()=>keyClicked(' ')} >space</button>
-        <button onClick={()=>delate()} >delate</button>
+        <button onClick={()=>props.delete()} >delate</button>
         <button onClick={()=>props.clear()} >clear all</button>
         </div>
 

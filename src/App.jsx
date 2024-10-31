@@ -37,8 +37,11 @@ function App() {
     newStyle("fontSize", size);
   }
 
-  const clearAll = () => {console.log("in clear"); setDisplay([{color: "black" ,fontSize: "16px"}]);}
+  const clearAll = () => setDisplay([{color: "black" ,fontSize: "16px"}]); //create copy of initialDisplay
 
+  const deleteChar = () => setDisplay((prevDisplay) => {
+    return [...prevDisplay].slice(0,-1);
+  });
 
   return (
     <>
@@ -46,7 +49,7 @@ function App() {
       <p style={{height: "50px"}}>{
         display.map((span) => (<span style={span.style}>{span.char}</span>))
       }</p>
-      <KeyBoard addDisplay={addChar} clear={clearAll}/>
+      <KeyBoard addDisplay={addChar} clear={clearAll} delete={deleteChar}/>
       <ChangeColor changeColor={changeColor}/>
       <ChangeSize  changeSize={changeSize}/>
     </>
