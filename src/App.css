@@ -38,7 +38,7 @@
 }
 
 body{
-  background-color: blueviolet;
+  background-color: rgb(133, 18, 133);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,4 +49,26 @@ body{
 div{
   align-items: center;
   text-align: center;
+}
+
+p{
+  border: 2px solid black;
+  vertical-align:middle;
+  padding: auto;
+}
+
+#all{
+  background-color: rgb(201, 177, 197);
+  margin-top: 120px;
+  padding: 50px;
+  border-radius: 50px;
+
+}
+
+#title{
+  font-size: 100px;
+  font-family: cursive;
+  font-weight: bold;
+  font-style: italic;
+  color:  rgb(133, 18, 133);
 }

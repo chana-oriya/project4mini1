@@ -57,7 +57,8 @@ function App() {
 
   return (
     <>
-      <h1>amazing key board!</h1>
+    <div id="all"> 
+      <h1 id="title">amazing key board!</h1>
       <p style={{height: "50px"}}>{
         display.map((span) => (<span style={span.style}>{span.char}</span>))
       }</p>
@@ -65,6 +66,7 @@ function App() {
       <ChangeColor changeColor={changeColor}/>
       <ChangeSize  changeSize={changeSize}/>
       <ChangeAll changeAll={changeAll} />
+      </div>
     </>
   );
 }
