@@ -22,7 +22,7 @@ function KeyBoard(props){
 
     return (
         <div>
-        <div>
+        <div class="kb">
             {language.map((key) => (<Key keyClicked={keyClicked} char={key}/>))}
         </div>
 

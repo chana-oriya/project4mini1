@@ -8,8 +8,8 @@ function Language(props){
         <> 
         <button class="cl" style={style} onClick={() => props.ChangeLanguage(props.lekeys)}>english</button>
         <button class="cl" style={style} onClick={() => props.ChangeLanguage(props.hekeys)}> עברית</button>
-        <button class="cl" style={style} onClick={() => props.ChangeLanguage(props.uekeys)}>uperCase</button>
-        <button class="cl" style={style} onClick={() => props.ChangeLanguage(props.sign)}>signs</button>
+        <button class="cl" style={style} onClick={() => props.ChangeLanguage(props.uekeys)}>Upper Case</button>
+        <button class="cl" style={style} onClick={() => props.ChangeLanguage(props.sign)}>special</button>
         </>
     )
 }
