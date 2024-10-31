@@ -1,12 +1,14 @@
 import React, {useState} from "react";
+// import '.../App.css';
+
 
 function ChangeColor(props){
     
     return (
         <div>
-            <button style={{...style , color:"red"}} onClick={() => props.changeColor('red')}>red</button>
-            <button style={{...style , color:"black"}} onClick={() => props.changeColor('black')}>black</button>
-            <button style={{...style , color:"blue"}} onClick={() => props.changeColor('blue')}>blue</button>
+            <button class="cc" style={{...style , color:"red"}} onClick={() => props.changeColor('red')}>red</button>
+            <button class="cc" style={{...style , color:"black"}} onClick={() => props.changeColor('black')}>black</button>
+            <button class="cc" style={{...style , color:"blue"}} onClick={() => props.changeColor('blue')}>blue</button>
         </div>
     )
 }
@@ -20,5 +22,6 @@ const style={
     fontSize:"16px",
     margin:"3px"
 }
+
 
 export default ChangeColor;
