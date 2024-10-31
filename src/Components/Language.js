@@ -7,6 +7,7 @@ function Language(props){
         <button onClick={() => props.ChangeLanguage(props.lekeys)}>english</button>
         <button onClick={() => props.ChangeLanguage(props.hekeys)}> עברית</button>
         <button onClick={() => props.ChangeLanguage(props.uekeys)}>uperCase</button>
+        <button onClick={() => props.ChangeLanguage(props.sign)}>signs</button>
         </>
     )
 }
