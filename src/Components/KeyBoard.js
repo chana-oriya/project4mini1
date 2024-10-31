@@ -23,7 +23,7 @@ function KeyBoard(props){
     return (
         <>
         <div>
-            {lekeys.map((key) => (<Key keyClicked={keyClicked} char={key}/>))}
+            {keys.map((key) => (<Key keyClicked={keyClicked} char={key}/>))}
         </div>
         <Language lekeys={lekeys} uekeys={uekeys} hekeys={hekeys} ChangeLanguage={ChangeLanguage}/>
         </>
