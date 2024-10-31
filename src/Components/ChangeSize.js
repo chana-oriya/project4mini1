@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-// import '.../App.css';
 
 function ChangeSize(props){
     
@@ -15,8 +14,6 @@ function ChangeSize(props){
 const style={
     width:"63px",
     height:"43px",
-    // width: "fit-content",
-    // blockSize: "fit-content",
     fontWeight:"bold",
     fontSize:"16px",
     margin:"3px"

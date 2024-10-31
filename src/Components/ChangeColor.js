@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-// import '.../App.css';
 
 
 function ChangeColor(props){
@@ -17,7 +16,6 @@ const style={
     width:"60px",
     height:"40px",
     width: "fit-content",
-    // blockSize: "fit-content",
     fontWeight:"bold",
     fontSize:"16px",
     margin:"3px"
