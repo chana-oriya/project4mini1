@@ -3,9 +3,13 @@ import './App.css';
 import KeyBoard from './Components/KeyBoard';
 import ChangeColor from './Components/ChangeColor';
 import ChangeSize from './Components/ChangeSize';
+import ChangeAll from './Components/ChangeAll';
 
 const initialStyle = {color: "black" ,fontSize: "16px"};
 const initialDisplay = [{style: initialStyle, char: "-"}];
+
+const deepCopy = (obj) => JSON.parse(JSON.stringify(obj));
+
 
 function App() {
   const [display, setDisplay] = useState(initialDisplay);
@@ -13,16 +17,12 @@ function App() {
 
 
   const addChar = (char) => {
-    setDisplay((prevDisplay) => {
-        prevDisplay.push({style: currStyle, char: char});
-        return [...prevDisplay];
-      }
-    );
-  }
+    setDisplay((prevDisplay) =>  [...prevDisplay, {style: currStyle, char: char}]);
+  }   
 
   const newStyle = (key, value) => {
     console.log("in newStyle");
-    let newStyle = JSON.parse(JSON.stringify(currStyle)); //change to more correct way
+    let newStyle = deepCopy(currStyle); 
     newStyle[key] = value;
     console.log(newStyle);
     setCurrStyle(newStyle);
@@ -35,17 +35,25 @@ function App() {
   const changeSize = (size) => {
     newStyle("fontSize", size);
   }
-<<<<<<< HEAD
-  
-  const clearAll = () => {console.log("in clear"); setDisplay([{color: "black" ,fontSize: "16px"}]);}
-=======
 
-  const clearAll = () => setDisplay([{color: "black" ,fontSize: "16px"}]); //create copy of initialDisplay
->>>>>>> c9aaef8ac91247a022119c76bea2026157b18fa5
+  const clearAll = () => setDisplay([deepCopy(initialDisplay)]); 
 
   const deleteChar = () => setDisplay((prevDisplay) => {
     return [...prevDisplay].slice(0,-1);
   });
+
+  const changeAll = (attribute, value) => {
+    console.log("change: " + attribute + " to " + value);
+    if(attribute === 'case'){
+      const changeTo = (str) => (value === 'upper' ? str.toUpperCase() : str.toLowerCase());
+      setDisplay((prevDisplay) => {
+        return prevDisplay.map((item) => {
+          let newItem = deepCopy(item);
+          newItem.char = changeTo(newItem.char);
+          return newItem;});
+      });
+    }
+  };
 
   return (
     <>
@@ -56,6 +64,7 @@ function App() {
       <KeyBoard addDisplay={addChar} clear={clearAll} delete={deleteChar}/>
       <ChangeColor changeColor={changeColor}/>
       <ChangeSize  changeSize={changeSize}/>
+      <ChangeAll changeAll={changeAll} />
     </>
   );
 }
