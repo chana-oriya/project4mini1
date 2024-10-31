@@ -26,12 +26,6 @@ function KeyBoard(props){
         // props.addDisplay(str.slice(0,-1))
     }
 
-    const clear =()=> {
-        props.setDisplay(" ")
-        // props.addDisplay()
-    }
-
-
     return (
         <div>
         <div>
@@ -41,7 +35,7 @@ function KeyBoard(props){
         <div>
         <button onClick={()=>keyClicked(' ')} >space</button>
         <button onClick={()=>delate()} >delate</button>
-        <button onClick={()=>clear()} >clear all</button>
+        <button onClick={()=>props.clear()} >clear all</button>
         </div>
 
         <div>

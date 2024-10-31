@@ -4,19 +4,13 @@ import KeyBoard from './Components/KeyBoard';
 import ChangeColor from './Components/ChangeColor';
 import ChangeSize from './Components/ChangeSize';
 
+const initialStyle = {color: "black" ,fontSize: "16px"};
+const initialDisplay = [{style: initialStyle, char: "-"}];
+
 function App() {
-<<<<<<< HEAD
-  const [display, setDisplay] = useState(" ");
-  const [color, setColor] = useState("black");
-  const [size, setSize] = useState("16px");
-  
-  const addDisplay = (add) => {
-    //array of span
-   setDisplay((<span style={{color: color , fontSize:size }}>{add}</span>));
-=======
-  const [display, setDisplay] = useState([{style: {color: "pink"}, char: "-"}]);
-  //const [color, setColor] = useState("black");
-  const [currStyle, setCurrStyle] = useState({color: "red"});
+  const [display, setDisplay] = useState(initialDisplay);
+  const [currStyle, setCurrStyle] = useState(initialStyle);
+
 
   const addChar = (char) => {
     
@@ -25,7 +19,6 @@ function App() {
         return [...prevDisplay];
       }
     );
->>>>>>> c0ff52fc81317ddb3a3a358b6d3f47a20019aee5
   }
 
   const newStyle = (key, value) => {
@@ -41,22 +34,19 @@ function App() {
   }
 
   const changeSize = (size) => {
-    setSize(size);
+    newStyle("fontSize", size);
   }
+
+  const clearAll = () => {console.log("in clear"); setDisplay([{color: "black" ,fontSize: "16px"}]);}
 
 
   return (
     <>
       <h1>amazing key board!</h1>
-<<<<<<< HEAD
-      <p style={{height: "50px"}}>{display}</p>
-      <KeyBoard addDisplay={addDisplay} display={display} setDisplay={setDisplay}/>
-=======
       <p style={{height: "50px"}}>{
         display.map((span) => (<span style={span.style}>{span.char}</span>))
       }</p>
-      <KeyBoard addDisplay={addChar}/>
->>>>>>> c0ff52fc81317ddb3a3a358b6d3f47a20019aee5
+      <KeyBoard addDisplay={addChar} clear={clearAll}/>
       <ChangeColor changeColor={changeColor}/>
       <ChangeSize  changeSize={changeSize}/>
     </>
