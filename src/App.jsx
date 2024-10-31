@@ -66,7 +66,7 @@ function App() {
   return (
     <>
     <div id="all"> 
-      <h1 id="title">amazing key board!</h1>
+      <h1 id="title">amazing keyboard!</h1>
       <p style={{height: "50px"}}>{
         display.map((span) => (<span style={span.style}>{span.char}</span>))
       }</p>

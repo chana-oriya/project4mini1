@@ -1,13 +1,15 @@
 import React, {useState} from "react";
+// import '.../App.css';
+
 
 function Language(props){
     
     return (
         <> 
-        <button style={style} onClick={() => props.ChangeLanguage(props.lekeys)}>english</button>
-        <button style={style} onClick={() => props.ChangeLanguage(props.hekeys)}> עברית</button>
-        <button style={style} onClick={() => props.ChangeLanguage(props.uekeys)}>uperCase</button>
-        <button style={style} onClick={() => props.ChangeLanguage(props.sign)}>signs</button>
+        <button class="cl" style={style} onClick={() => props.ChangeLanguage(props.lekeys)}>english</button>
+        <button class="cl" style={style} onClick={() => props.ChangeLanguage(props.hekeys)}> עברית</button>
+        <button class="cl" style={style} onClick={() => props.ChangeLanguage(props.uekeys)}>uperCase</button>
+        <button class="cl" style={style} onClick={() => props.ChangeLanguage(props.sign)}>signs</button>
         </>
     )
 }
