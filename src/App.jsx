@@ -6,7 +6,7 @@ import ChangeSize from './Components/ChangeSize';
 import ChangeAll from './Components/ChangeAll';
 
 const initialStyle = {color: "black" ,fontSize: "16px"};
-const initialDisplay = [{style: initialStyle, char: "-"}];
+const initialDisplay = [{style: initialStyle, char: ""}];
 
 const deepCopy = (obj) => JSON.parse(JSON.stringify(obj));
 
@@ -53,6 +53,14 @@ function App() {
           return newItem;});
       });
     }
+
+    setDisplay((prevDisplay) => {
+      return prevDisplay.map((item) => {
+        let newItem = deepCopy(item);
+        newItem.style[attribute] = value;
+        return newItem;});
+    });
+    newStyle(attribute, value);
   };
 
   return (
