@@ -52,10 +52,14 @@ div{
   text-align: center;
 }
 
-p{
+pre{
+  text-align: left;
   border: 2px solid rgb(80, 9, 80);
-  vertical-align:middle;
-  padding: auto;
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  overflow:hidden;
 }
 
 #all{
