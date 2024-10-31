@@ -3,7 +3,7 @@ import React, {useState} from "react";
 function Key(props){
     
     return (
-        <button onClick={() => props.keyClicked(props.char)}>{props.char}</button>
+        <button onClick={() => props.keyClicked(props.char)}>{props.char == " " ? "_" : props.char}</button>
     )
 }
 
